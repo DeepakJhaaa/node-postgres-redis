@@ -1,6 +1,7 @@
-FROM node:7
+FROM node:10
 WORKDIR /app
 
+RUN npm install -g nodemon
 COPY package.json /app
 RUN npm install
 COPY . /app
