@@ -14,8 +14,8 @@ services:
       - DB_HOST=database
       - REDIS_HOST=redis
     volumes:
-      - ./api:/usr/app/
-      - /usr/app/node_modules
+      - ./api:/app
+      - app/node_modules
     restart: on-failure
 
   database:

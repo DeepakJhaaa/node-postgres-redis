@@ -7,16 +7,13 @@ const logger = require('morgan')
 const indexRouter = require('./routes/index')
 
 const app = express()
-
-console.log("Running Inside Express");
 const { knex } = require('./config.js')
-console.log("After the knex");
 knex.migrate.latest()
 	.then(function() {
 		return knex.seed.run()
 	})
 	.then(function() {
-		console.log('migrations are finished')
+		// console.log('migrations are finished')
 	})
 // view engine setup
 
